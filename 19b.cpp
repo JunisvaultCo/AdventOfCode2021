@@ -1,3 +1,5 @@
+// I deeply apologise to anyone reading this code
+
 #include <iostream>
 #include <set>
 #include <string.h>
@@ -250,9 +252,9 @@ int main()
     }
     printf("%d\n", pointsSet.size());
     int maxx = 0;
-    for (auto j: pointsSet)
-        for (auto i: pointsSet)
-            maxx = max(maxx, abs(get<0>(j) - get<0>(i)) + abs(get<1>(j) - get<1>(i)) + abs(get<2>(j) - get<2>(i)));
+    for (int i = 0; i <= scanner; i++)
+        for (int j = 0; j <= scanner; j++)
+            maxx = max(maxx, abs(coords[j].x - coords[i].x) + abs(coords[j].y - coords[i].y) + abs(coords[j].z - coords[i].z));
     printf("%d\n", maxx);
     fclose(fin);
 }
